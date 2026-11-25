@@ -20,6 +20,7 @@ export const ENV = {
   CARD_NUMBER:  process.env.CARD_NUMBER  || '4111111111111111',
   CARD_EXPIRY:  process.env.CARD_EXPIRY  || '12/28',
   CARD_CVV:     process.env.CARD_CVV     || '123',
-  UPI_ID:       process.env.UPI_ID       || 'test@upi',
-  WALLET_MOBILE:process.env.WALLET_MOBILE|| '9876543210',
+  UPI_ID:            process.env.UPI_ID            || 'test@upi',
+  WALLET_MOBILE:     process.env.WALLET_MOBILE     || '9876543210',
+  ENABLE_OTP_PROMPT: process.env.ENABLE_OTP_PROMPT === 'true',
 };

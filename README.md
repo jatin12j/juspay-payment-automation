@@ -114,6 +114,7 @@ npm run report
 - **Netbanking & Wallet:** Reach authentic live second-factor / authentication screens (**SBI Personal Banking Login** and **MobiKwik Get OTP**).
 - **UPI Limitation:** UPI reaches the **payment-pending QR waiting screen** (`Scan and Pay`), which is **not** a second-factor page—the actual second-factor approval happens inside the user's mobile UPI app.
 - **Card Limitation:** Because CCAvenue is running in **live production mode**, the dummy Visa test card (`4111111111111111`) fails live BIN/gateway validation and displays CCAvenue's error screen rather than a bank 3DS/OTP page. Using a valid card in `.env` reaches the bank 3DS/OTP screen, but we intentionally do **not** include or record real card numbers.
+- **Bonus Semi-Automated OTP Mode (`ENABLE_OTP_PROMPT`):** [OTPPage.ts](pages/OTPPage.ts) includes `semiAutomatedOTPEntry()`, an **off-by-default** human-in-the-loop helper (`ENABLE_OTP_PROMPT=false`) for production sanity testing. When enabled, it pauses and asks the QA engineer in the terminal to type the SMS OTP, fills it in, and submits—without bypassing any security control. Successful transaction completion is intentionally not executed on a live charity gateway.
 
 ---
 

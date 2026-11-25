@@ -76,4 +76,41 @@ export class OTPPage extends BasePage {
     await targetPage.waitForTimeout(1500);
     await takeScreenshot(targetPage, `second-factor-${method.toLowerCase()}`);
   }
+
+  /**
+   * BONUS (Off by default via ENABLE_OTP_PROMPT=false):
+   * Human-in-the-loop OTP helper for production sanity testing.
+   * Pauses cleanly in the terminal, accepts OTP from the QA engineer,
+   * and submits it without bypassing any SMS/bank security control.
+   */
+  async semiAutomatedOTPEntry(targetPage: Page): Promise<void> {
+    const readline = await import('readline');
+    const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+
+    const otp = await new Promise<string>((resolve) => {
+      rl.question('\n🔔 [Semi-Auto OTP] Enter received OTP (or press ENTER to skip): ', (ans) => {
+        rl.close();
+        resolve(ans.trim());
+      });
+    });
+
+    if (!otp) {
+      console.log('⏭️  OTP skipped — stopping safely before transaction completion.');
+      return;
+    }
+
+    const otpInput = targetPage.locator(
+      'input[placeholder*="OTP" i], input[name*="otp" i], input[id*="otp" i]'
+    ).first();
+
+    if (await otpInput.isVisible({ timeout: 5_000 }).catch(() => false)) {
+      await otpInput.fill(otp);
+      const submitBtn = targetPage.locator(
+        'button[type="submit"], button:has-text("Submit"), button:has-text("Verify"), button:has-text("Proceed")'
+      ).first();
+      if (await submitBtn.isVisible({ timeout: 3_000 }).catch(() => false)) {
+        await submitBtn.click();
+      }
+    }
+  }
 }
