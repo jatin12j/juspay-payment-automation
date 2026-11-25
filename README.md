@@ -154,8 +154,5 @@ JuspQE/
 
 ## 🎬 Demo Videos (Submission Links)
 
-- **Card Payment Flow:** `videos/card-payment.webm` — _[Add Drive/YouTube link]_
-- **Netbanking (SBI) Flow:** `videos/netbanking-payment.webm` — _[Add Drive/YouTube link]_
-- **UPI QR Flow:** `videos/upi-payment.webm` — _[Add Drive/YouTube link]_
-- **Wallet (MobiKwik) Flow:** `videos/wallet-payment.webm` — _[Add Drive/YouTube link]_
-- **Terminal Execution Recording:** _[Add Drive/YouTube link]_
+- **Full Walkthrough (Terminal + Live Flows + HTML Report + Voice):** https://drive.google.com/file/d/1gmJ85uKJFL61HZmvvYXD7SB9MqBIg3MZ/view?usp=sharing
+- **Local Playwright Recordings (generated on run):** `videos/card-payment.webm`, `videos/netbanking-payment.webm`, `videos/upi-payment.webm`, `videos/wallet-payment.webm`
