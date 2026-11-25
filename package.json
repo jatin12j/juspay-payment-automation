@@ -1,0 +1,34 @@
+{
+  "name": "juspqe",
+  "version": "1.0.0",
+  "description": "Juspay Hackathon - Payment Automation with Playwright TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:card": "npx playwright test --grep \"Card Payment\"",
+    "test:netbanking": "npx playwright test --grep \"Netbanking Payment\"",
+    "test:upi": "npx playwright test --grep \"UPI Payment\"",
+    "test:wallet": "npx playwright test --grep \"Wallet Payment\"",
+    "test:headed": "npx playwright test --headed",
+    "report": "npx playwright show-report",
+    "install:browsers": "npx playwright install chromium"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "payment-automation",
+    "page-object-model",
+    "juspay"
+  ],
+  "author": "Jatin Goyal",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^26.6.9",
+    "dotenv": "^18.0.10",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
