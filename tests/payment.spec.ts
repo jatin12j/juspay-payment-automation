@@ -16,10 +16,10 @@ import { ENV } from '../utils/env';
 type PaymentMethod = 'Card' | 'Netbanking' | 'UPI' | 'Wallet';
 
 const PAYMENT_METHODS: { method: PaymentMethod; description: string }[] = [
-  { method: 'Card',       description: 'Credit/Debit Card → Gateway 3DS / Validation flow' },
+  { method: 'Card', description: 'Credit/Debit Card → Gateway 3DS / Validation flow' },
   { method: 'Netbanking', description: 'Netbanking (SBI) → Bank Login / Auth page' },
-  { method: 'UPI',        description: 'UPI → Payment-Pending QR screen (app approval)' },
-  { method: 'Wallet',     description: 'Wallet (MobiKwik) → Wallet Login / Get OTP screen' },
+  { method: 'UPI', description: 'UPI → Payment-Pending QR screen (app approval)' },
+  { method: 'Wallet', description: 'Wallet (MobiKwik) → Wallet Login / Get OTP screen' },
 ];
 
 for (const { method, description } of PAYMENT_METHODS) {
