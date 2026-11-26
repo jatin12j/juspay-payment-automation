@@ -14,27 +14,27 @@ import { BasePage } from './BasePage';
 
 export class PaymentPage extends BasePage {
   // Payment option tabs
-  private readonly cardOption       = this.page.locator('#OPTCRDC');
+  private readonly cardOption = this.page.locator('#OPTCRDC');
   private readonly netbankingOption = this.page.locator('#OPTNBK');
-  private readonly walletOption     = this.page.locator('#OPTWLT');
-  private readonly upiOption        = this.page.locator('#OPTUPI');
+  private readonly walletOption = this.page.locator('#OPTWLT');
+  private readonly upiOption = this.page.locator('#OPTUPI');
 
   // Card fields
-  private readonly cardNumberInput  = this.page.locator('#credit-card');
-  private readonly cardExpiryInput  = this.page.locator('#cardexpiry');
-  private readonly cardCvvInput     = this.page.locator('#cvvnumber');
-  private readonly cardPayBtn       = this.page.locator('a.makePayment:visible').first();
+  private readonly cardNumberInput = this.page.locator('#credit-card');
+  private readonly cardExpiryInput = this.page.locator('#cardexpiry');
+  private readonly cardCvvInput = this.page.locator('#cvvnumber');
+  private readonly cardPayBtn = this.page.locator('a.makePayment:visible').first();
 
   // Netbanking fields
-  private readonly bankSelect       = this.page.locator('#netbanking-select');
+  private readonly bankSelect = this.page.locator('#netbanking-select');
   private readonly netbankingPayBtn = this.page.locator('#make-payment-net-banking.netbanking-btn:visible').first();
 
   // UPI fields
-  private readonly generateQrBtn    = this.page.locator('a.generate-btn:visible').first();
+  private readonly generateQrBtn = this.page.locator('a.generate-btn:visible').first();
 
   // Wallet fields
-  private readonly mobikwikRadio    = this.page.locator('label[for="wallet-0"], label:has-text("Mobikwik")').first();
-  private readonly walletPayBtn     = this.page.locator('button.wallet-pay:visible').first();
+  private readonly mobikwikRadio = this.page.locator('label[for="wallet-0"], label:has-text("Mobikwik")').first();
+  private readonly walletPayBtn = this.page.locator('button.wallet-pay:visible').first();
 
   constructor(page: Page) {
     super(page);
